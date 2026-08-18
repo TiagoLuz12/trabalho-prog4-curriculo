@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiago da Luz — Currículo | Desenvolvedor Front-End</title>
+  <meta name="description" content="Currículo digital interativo de Tiago da Luz, desenvolvedor front-end.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegação principal">
+      <span class="logo">tl<span class="accent">.</span>dev</span>
+      <ul class="nav-links">
+        <li><a href="#sobre">sobre</a></li>
+        <li><a href="#habilidades">habilidades</a></li>
+        <li><a href="#experiencia">experiência</a></li>
+        <li><a href="#contato">contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <div class="terminal-window" role="img" aria-label="Janela de terminal simulando o comando whoami">
+        <div class="terminal-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-title">visitante@portfolio ~ </span>
+        </div>
+        <div class="terminal-body">
+          <p class="line"><span class="prompt">$</span> whoami</p>
+          <h1 id="heroName" class="hero-name">Tiago da Luz</h1>
+          <p class="line output">&gt; Desenvolvedor Front-End &amp; entusiasta de UI/UX</p>
+          <p class="line output blink-cursor" id="typedLine">&nbsp;</p>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <label for="nomeVisitante" class="hero-label">Quer uma saudação personalizada?</label>
+        <div class="hero-input-row">
+          <input type="text" id="nomeVisitante" placeholder="Digite seu nome">
+          <button id="btnSaudacao" type="button">Cumprimentar</button>
+        </div>
+        <p id="saudacaoDinamica" class="saudacao-dinamica"></p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="sobre" class="section">
+      <article class="about-grid">
+        <img
+          src="media/foto.jpg"
+          alt="Foto de perfil de Tiago da Luz"
+          class="profile-photo"
+          onerror="this.src='https://placehold.co/320x320/171E2E/E8A33D?text=TL'">
+
+        <div class="about-text">
+          <p class="eyebrow">// sobre mim</p>
+          <h2>Transformo ideias em interfaces rápidas e acessíveis</h2>
+          <p>
+            Sou desenvolvedor front-end com foco em experiências web limpas, responsivas
+            e centradas em quem usa. Gosto de resolver problemas de layout com CSS puro
+            antes de recorrer a frameworks, e me interesso bastante por acessibilidade e
+            performance.
+          </p>
+
+          <p id="bioExtra" class="bio-extra hidden">
+            Fora do código, gosto de estudar tipografia, colecionar temas de terminal e
+            contribuir com pequenos projetos open source aos finais de semana. Acredito que
+            bom design é, antes de tudo, boa comunicação.
+          </p>
+
+          <button id="btnToggleBio" type="button" class="link-button" aria-expanded="false" aria-controls="bioExtra">
+            + ver mais sobre mim
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <section id="habilidades" class="section section-alt">
+      <p class="eyebrow">// habilidades</p>
+      <h2>Stack e ferramentas</h2>
+
+      <div class="skills-grid">
+        <ul class="skills-list">
+          <li><span>HTML5 semântico</span><meter min="0" max="100" value="95">95%</meter></li>
+          <li><span>CSS3 / Flexbox / Grid</span><meter min="0" max="100" value="90">90%</meter></li>
+          <li><span>JavaScript</span><meter min="0" max="100" value="80">80%</meter></li>
+          <li><span>Acessibilidade (a11y)</span><meter min="0" max="100" value="75">75%</meter></li>
+          <li><span>UI/UX &amp; Prototipação</span><meter min="0" max="100" value="70">70%</meter></li>
+        </ul>
+
+        <div class="canvas-wrapper">
+          <canvas id="skillChart" width="320" height="320" role="img"
+            aria-label="Gráfico radar mostrando o nível das habilidades: HTML 95%, CSS 90%, JavaScript 80%, Acessibilidade 75% e UI/UX 70%">
+          </canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="experiencia" class="section">
+      <p class="eyebrow">// experiência</p>
+      <h2>Trajetória</h2>
+
+      <ol class="timeline">
+        <li>
+          <span class="timeline-year">2024 — atual</span>
+          <h3>Desenvolvedor Front-End Jr.</h3>
+          <p>Construção de interfaces responsivas e manutenção de design system interno.</p>
+        </li>
+        <li>
+          <span class="timeline-year">2023</span>
+          <h3>Estágio em Desenvolvimento Web</h3>
+          <p>Apoio na criação de landing pages e integração com APIs REST.</p>
+        </li>
+        <li>
+          <span class="timeline-year">2022</span>
+          <h3>Curso Técnico em Informática</h3>
+          <p>Formação com foco em lógica de programação, HTML, CSS e JavaScript.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section id="apresentacao" class="section section-alt">
+      <p class="eyebrow">// vídeo de apresentação</p>
+      <h2>Um pouco sobre meu trabalho</h2>
+      <p>Assista a um breve vídeo de apresentação (opcional, adicione o arquivo em <code>media/video.mp4</code>).</p>
+      <video controls width="480" poster="media/foto.jpg">
+        <source src="media/video.mp4" type="video/mp4">
+        Seu navegador não suporta a exibição de vídeo. Este seria um vídeo curto de
+        apresentação pessoal, com Tiago falando sobre sua trajetória na área de tecnologia.
+      </video>
+    </section>
+
+    <section id="contato" class="section">
+      <p class="eyebrow">// contato</p>
+      <h2>Vamos conversar?</h2>
+
+      <div class="contact-grid">
+        <form id="formContato" class="contact-form">
+          <label for="email">Seu e-mail</label>
+          <input type="email" id="email" name="email" placeholder="voce@exemplo.com" required>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..."></textarea>
+
+          <button type="submit">Enviar</button>
+          <p id="formFeedback" class="form-feedback" aria-live="polite"></p>
+        </form>
+
+        <ul class="social-list">
+          <li><a href="mailto:tiagoluz752@gmail.com">✉️ E-mail</a></li>
+          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">💼 LinkedIn</a></li>
+          <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">💻 GitHub</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">📷 Instagram</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Tiago da Luz — construído com HTML, CSS e JavaScript.</p>
+    <p id="contadorVisitas" class="contador">carregando contador...</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
